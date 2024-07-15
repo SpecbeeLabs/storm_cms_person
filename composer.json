@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "drupal/flood_control": "^2.3",
-        "drupal/password_policy": "^4.0"
+        "specbee/storm_cms_content_type_base": "1.x-dev"
     }
 }
