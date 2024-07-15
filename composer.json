@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "specbee/storm_cms_content_type_base": "1.x-dev"
+        "specbee/storm_cms_content_type_base": "*",
+        "specbee/storm_cms_media": "*"
     }
 }
