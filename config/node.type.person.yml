@@ -31,7 +31,7 @@ third_party_settings:
     type_weight: 0
 name: Person
 type: person
-description: "Use <em>Person</em> to add an individual user with basic information.\r\nThis is useful for users who do not need a login for the site to access but can add references in other content types."
+description: "An individual associated with an agency or organization."
 help: null
 new_revision: true
 preview_mode: 1
