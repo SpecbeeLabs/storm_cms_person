@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "specbee/storm_cms_content_type_base": "*",
-        "specbee/storm_cms_media": "*"
+        "specbee/storm_cms_content_type_base": "*"
     }
 }
