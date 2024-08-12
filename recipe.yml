@@ -1,7 +1,5 @@
 name: Storm CMS Person
 description: Storm CMS Person
-recipes:
-  - storm_cms_content_type_base
 config:
   actions:
     metatag.settings:
