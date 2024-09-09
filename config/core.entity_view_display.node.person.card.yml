@@ -1,0 +1,60 @@
+uuid: 1d9aa359-8ee3-4691-9478-87f001d87c83
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.person.body
+    - field.field.node.person.field_company
+    - field.field.node.person.field_designation
+    - field.field.node.person.field_first_name
+    - field.field.node.person.field_image
+    - field.field.node.person.field_last_name
+    - field.field.node.person.field_link
+    - field.field.node.person.field_meta_tags
+    - image.style.max_325x325
+    - node.type.person
+  module:
+    - field_formatter_class
+    - layout_builder
+    - lazy
+    - media
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: AMcoVfC7UDFb6YNTYJjjqAACvS0kXJaWWcM241w7j1A
+id: node.person.card
+targetEntityType: node
+bundle: person
+mode: card
+content:
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: max_325x325
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      lazy:
+        lazy_image: '0'
+        placeholder_style: ''
+        data_uri: false
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_company: true
+  field_designation: true
+  field_first_name: true
+  field_last_name: true
+  field_link: true
+  field_meta_tags: true
+  links: true
