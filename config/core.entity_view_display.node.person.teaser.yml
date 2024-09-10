@@ -11,119 +11,72 @@ dependencies:
     - field.field.node.person.field_last_name
     - field.field.node.person.field_link
     - field.field.node.person.field_meta_tags
-    - image.style.large
+    - image.style.thumbnail
     - node.type.person
   module:
     - field_formatter_class
     - layout_builder
+    - layout_builder_restrictions
     - lazy
     - media
-    - text
+    - smart_trim
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      - layout_id: layout_twocol_section
-        layout_settings:
-          label: ""
-          context_mapping: {}
-          column_widths: 25-75
-        components:
-          971710ab-6b8d-4cce-9445-4a4820d21e86:
-            uuid: 971710ab-6b8d-4cce-9445-4a4820d21e86
-            region: first
-            configuration:
-              id: "field_block:node:person:field_image"
-              label: Image
-              label_display: "0"
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: media_thumbnail
-                label: hidden
-                settings:
-                  image_link: ""
-                  image_style: large
-                  image_loading:
-                    attribute: lazy
-                third_party_settings:
-                  field_formatter_class:
-                    class: ""
-                  lazy:
-                    lazy_image: "0"
-                    placeholder_style: ""
-                    data_uri: false
-            weight: 0
-            additional: {}
-          81413b89-98bc-4eb3-b12d-a443adbf1e52:
-            uuid: 81413b89-98bc-4eb3-b12d-a443adbf1e52
-            region: second
-            configuration:
-              id: "field_block:node:person:body"
-              label: Bio
-              label_display: "0"
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {}
-                third_party_settings:
-                  field_formatter_class:
-                    class: ""
-            weight: 0
-            additional: {}
-          052678eb-87fa-46d7-aefe-b347a8dd6daf:
-            uuid: 052678eb-87fa-46d7-aefe-b347a8dd6daf
-            region: second
-            configuration:
-              id: "extra_field_block:node:person:links"
-              label: Links
-              label_display: "0"
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                settings: {}
-                third_party_settings: {}
-            weight: 1
-            additional: {}
-        third_party_settings: {}
-_core:
-  default_config_hash: vpXbC1EJxb7d0VhAsx1Z_p25sEjV-UlWL0XSsGTfnck
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
 id: node.person.teaser
 targetEntityType: node
 bundle: person
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: smart_trim
     label: hidden
     settings:
-      trim_length: 600
-    third_party_settings: {}
+      trim_length: 300
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: true
+      wrap_class: trimmed
+      more:
+        display_link: true
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: 'Read more'
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: true
+        replace_tokens: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 1
     region: content
   field_image:
     type: media_thumbnail
     label: hidden
     settings:
-      image_link: ""
-      image_style: large
+      image_link: ''
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings:
       field_formatter_class:
-        class: ""
+        class: ''
       lazy:
-        lazy_image: "0"
-        placeholder_style: ""
+        lazy_image: '0'
+        placeholder_style: ''
         data_uri: false
     weight: 0
     region: content
